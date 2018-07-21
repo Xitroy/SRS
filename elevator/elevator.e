@@ -6,15 +6,17 @@ note
 class
 	ELEVATOR
 
-create
-	make
+feature {NONE} -- Attributes
+
+	id: INTEGER
+		-- ID of an elevator.
+
 
 feature {NONE} -- Initialization
 
-	make
+	choose_cabin
 		do
-
-			print("%N_________Test completed___________%N");
+			Result := 1
 		end
 
 end

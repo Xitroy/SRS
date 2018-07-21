@@ -10,10 +10,19 @@ class
 	inherit
 		BUTTON
 
-	feature
-		dirmock
-		do
+	feature -- Attributses
 
-		end
+		direction:STRING
+			-- direction of button
+
+		floor: FLOOR
+			-- 	floor of a button.
+
+	feature
+		push
+			do
+				elevator := floor.elevator
+				cabin = elevator.choose_cabin(floor)
+			end
 
 end

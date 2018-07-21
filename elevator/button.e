@@ -6,10 +6,10 @@ note
 
 class
 	BUTTON
-	feature
-	btnmock
-		do
 
-		end
+feature -- Attributses
+
+	id:INTEGER
+		-- ID of button
 
 end
