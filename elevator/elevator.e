@@ -6,17 +6,18 @@ note
 class
 	ELEVATOR
 
-feature {NONE} -- Attributes
+feature -- Attributes
 
-	id: INTEGER
-		-- ID of an elevator.
+	cabins: ARRAY[CABIN]
+	floors: ARRAY[FLOOR]
+	max_floor: FLOOR
 
+feature -- Initialization
 
-feature {NONE} -- Initialization
-
-	choose_cabin
+	get_cabin
 		do
-			Result := 1
+			Result := cabins[0]
+				-- for now we have one-cabine implementation
 		end
 
 end

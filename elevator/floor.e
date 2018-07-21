@@ -12,7 +12,8 @@ feature {NONE} -- Attributes
 	id: INTEGER
 		-- ID of a floor.
 
-	elevator: ELEVATOR
-		-- Elevator.
+	button_up: BUTTON
+
+	button_	down: BUTTON
 
 end

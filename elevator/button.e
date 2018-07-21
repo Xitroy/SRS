@@ -7,9 +7,10 @@ note
 class
 	BUTTON
 
-feature -- Attributses
-
-	id:INTEGER
-		-- ID of button
+feature
+	summon(floor: FLOOR)
+	do
+		
+	end
 
 end

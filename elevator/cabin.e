@@ -7,19 +7,7 @@ note
 class
 	CABIN
 
-create
-	make
-
-feature {NONE} -- Attributes
-
-	id: INTEGER
-			-- ID of a cabin.
-
-	elevator: ELEVATOR
-			-- ELEVATOR.
-
-	doors: DOORS
-			-- DOORS OF CABIN.
+feature -- Attributes
 
 	current_floor: FLOOR
 			-- 	current floor of a cabin.
@@ -27,38 +15,48 @@ feature {NONE} -- Attributes
 	is_moving: BOOLEAN
 			-- 	state of a cabin.
 
-feature
-	make
-		do
-			create doors.make
-		end
+	is_open: BOOLEAN
+			-- 	state of a doors.
+
+	target_floor: FLOOR
+
+	buttons: ARRAY[BUTTON]
 
 feature
-	get_doors_state
+	move()
 		do
-			Result := doors.is_open
+			-- from
+			-- 		i :=
+			-- until
+
+			-- loop
+			-- 	target_floor != current_floor
+			-- end
+
+		end
+
+	move_one(delta: INTEGER)
+		do
+
 		end
 
 	open_doors
 		do
-			doors.open
+
 		end
 
 	close_doors
 		do
-			doors.close
+
 		end
 
-	move(n: INTEGER)
+	get_position()
 		do
-			is_moving := True
-			-- target_floor := FLOOR.get_by_id(number)
-			close_doors
-			-- while current_floor.id != target_floor.id: move_up or move_down
-			open_doors
-			is_moving := False
-			current_floor = target_floor
+			Result: current_floor.id
 		end
 
-
+	get_state()
+		do
+			Result: is_moving
+		end
 end
