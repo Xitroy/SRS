@@ -34,7 +34,9 @@ feature
 	local
 		cab: CABIN
 	do
+		unwrap
 		cab := elevator.get_cabin()
+		wrap
 	end
 
 end

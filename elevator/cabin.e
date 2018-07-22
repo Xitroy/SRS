@@ -53,7 +53,7 @@ feature
 					i > target.id - current_floor.id
 					-- will be more than zero
 				loop
-				 	move_one (target.id - current_floor.id)
+				 	move_up
 				end
 			else
 				from
@@ -62,19 +62,27 @@ feature
 					i > current_floor.id - target.id
 					-- will be more than zero
 				loop
-				 	move_one (target.id - current_floor.id)
+				 	move_down
 				end
 			end
 		end
 
-	move_one(delta: INTEGER)
+	move_up
+		require
+			elevator.floors.count = 6
+			current_floor.id > 1
+			current_floor.id < 6
 		do
-			if delta>0 then
-				current_floor := elevator.floors[current_floor.id+1]
-			end
-			if delta<0 then
-				current_floor := elevator.floors[current_floor.id-1]
-			end
+			current_floor := elevator.floors[current_floor.id+1]
+		end
+
+	move_down
+		require
+			elevator.floors.count = 6
+			current_floor.id > 2
+			current_floor.id < 7
+		do
+			current_floor := elevator.floors[current_floor.id-1]
 		end
 
 	open_doors
@@ -100,6 +108,8 @@ feature
 	    end
 
 	get_position: INTEGER
+		require
+			C1: current_floor /= VOID
 		do
 			Result := current_floor.id
 		end
