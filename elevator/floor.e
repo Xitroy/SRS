@@ -7,6 +7,15 @@ note
 class
 	FLOOR
 
+create
+	make
+
+feature {NONE} -- Initialization
+	make(init_id: INTEGER)
+		do
+			id := init_id
+		end
+
 feature -- Attributes
 
 	id: INTEGER
