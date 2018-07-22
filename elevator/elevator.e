@@ -10,20 +10,28 @@ class
 	create
 		make
 
+	feature {NONE} -- Initialization
+		make
+			local
+				f1, f2, f3, f4, f5, f6: FLOOR
+				c1: CABIN
+			do
+				create f1
+				create f2
+				create f3
+				create f4
+				create f5
+				create f6
+				floors := << f1, f2, f3, f4, f5, f6 >>
+				create c1.make (f1)
+				cabins := << c1 >>
+			end
+
 	feature -- Attributes
 		cabins: ARRAY[CABIN]
 		floors: ARRAY[FLOOR]
-		max_floor: FLOOR
 
-
-	feature {NONE} -- Initialization
-		make
-			do
-
-			end
-
-	feature -- Initialization
-
+	feature
 		get_cabin: CABIN
 			do
 				Result := cabins[0]
