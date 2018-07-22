@@ -7,6 +7,23 @@ note
 class
 	CABIN
 
+create
+	make
+
+feature -- Initialization
+	make (init_floor: FLOOR)
+	do
+		current_floor := init_floor
+		target_floor := init_floor
+		is_moving := false
+		is_doors_open := true
+    ensure
+	    floor_set: current_floor /= init_floor
+	    target_floor_set: target_floor = init_floor
+	    not_moving: is_moving = false
+	    opened: is_doors_open = true
+    end
+
 feature -- Attributes
 
 	current_floor: FLOOR
@@ -50,13 +67,13 @@ feature
 
 		end
 
-	get_position
+	get_position: INTEGER
 		do
 			Result := current_floor.id
 		end
 
-	get_state
+	get_state: BOOLEAN
 		do
-			Result:= is_moving
+			Result := is_moving
 		end
 end

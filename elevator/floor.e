@@ -7,7 +7,7 @@ note
 class
 	FLOOR
 
-feature {NONE} -- Attributes
+feature -- Attributes
 
 	id: INTEGER
 		-- ID of a floor.

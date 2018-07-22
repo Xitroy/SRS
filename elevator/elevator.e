@@ -9,7 +9,7 @@ class
 
 	create
 		make
-		
+
 	feature -- Attributes
 		cabins: ARRAY[CABIN]
 		floors: ARRAY[FLOOR]
@@ -24,7 +24,7 @@ class
 
 	feature -- Initialization
 
-		get_cabin
+		get_cabin: CABIN
 			do
 				Result := cabins[0]
 					-- for now we have one-cabine implementation
