@@ -15,13 +15,11 @@ feature -- Initialization
 	make (init_floor: FLOOR; init_elevator: ELEVATOR)
 	do
 		current_floor := init_floor
-		target_floor := init_floor
 		is_moving := false
 		is_doors_open := true
 		elevator := init_elevator
     ensure
 	    floor_set: current_floor = init_floor
-	    target_floor_set: target_floor = init_floor
 	    not_moving: is_moving = false
 	    opened: is_doors_open = true
 	    elevator_set: elevator = init_elevator
@@ -34,8 +32,6 @@ feature -- Attributes
 
 	current_floor: FLOOR
 			-- 	current floor of a cabin.
-
-	target_floor: FLOOR
 
 	is_moving: BOOLEAN
 			-- 	state of a cabin.
