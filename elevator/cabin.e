@@ -20,7 +20,7 @@ feature -- Initialization
 		is_doors_open := true
 		elevator := init_elevator
     ensure
-	    floor_set: current_floor /= init_floor
+	    floor_set: current_floor = init_floor
 	    target_floor_set: target_floor = init_floor
 	    not_moving: is_moving = false
 	    opened: is_doors_open = true
