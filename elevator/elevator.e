@@ -12,6 +12,16 @@ feature -- Attributes
 	floors: ARRAY[FLOOR]
 	max_floor: FLOOR
 
+create
+	make
+
+feature {NONE} -- Initialization
+	make
+		do
+
+		end
+
+
 feature -- Initialization
 
 	get_cabin
