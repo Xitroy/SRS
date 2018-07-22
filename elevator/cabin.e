@@ -43,7 +43,8 @@ feature -- Attributes
 
 feature
 	move(target: FlOOR)
-	local i: INTEGER
+		local
+			i: INTEGER
 		do
 			if target.id - current_floor.id>0 then
 				from

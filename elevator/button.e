@@ -7,6 +7,19 @@ note
 class
 	BUTTON
 
+create
+	make
+
+feature -- Initialization
+	make (init_elevator: ELEVATOR)
+		require
+			init_elevator /= VOID
+		do
+			elevator := init_elevator
+		ensure
+			elevator /= VOID
+		end
+
 feature -- Attributes
 
 	elevator: ELEVATOR
@@ -14,8 +27,14 @@ feature -- Attributes
 
 feature
 	summon(floor: FLOOR)
+	require
+		B1: floor /= VOID
+		B2: elevator /= VOID
+		B3: elevator.cabins.count > 0
+	local
+		cab: CABIN
 	do
-		elevator.get_cabin.move(floor)
+		cab := elevator.get_cabin()
 	end
 
 end

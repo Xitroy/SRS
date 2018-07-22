@@ -10,7 +10,7 @@ class
 	create
 		make
 
-	feature {NONE} -- Initialization
+	feature -- Initialization
 		make
 			local
 				f1, f2, f3, f4, f5, f6: FLOOR
@@ -33,8 +33,10 @@ class
 
 	feature
 		get_cabin: CABIN
+			require
+	        	at_least_one_cabin: cabins.count > 0
 			do
-				Result := cabins[0]
+				Result := cabins[1]
 					-- for now we have one-cabine implementation
 			end
 

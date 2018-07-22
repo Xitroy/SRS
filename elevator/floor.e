@@ -10,7 +10,7 @@ class
 create
 	make
 
-feature {NONE} -- Initialization
+feature -- Initialization
 	make(init_id: INTEGER)
 		do
 			id := init_id
