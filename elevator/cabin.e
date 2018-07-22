@@ -17,7 +17,7 @@ feature -- Attributes
 	is_moving: BOOLEAN
 			-- 	state of a cabin.
 
-	is_open: BOOLEAN
+	is_doors_open: BOOLEAN
 			-- 	state of a doors.
 
 	buttons: ARRAY[BUTTON]
