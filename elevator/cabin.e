@@ -3,6 +3,7 @@ note
 	author: ""
 	date: "$Date$"
 	revision: "$Revision$"
+	model: is_doors_open
 
 class
 	CABIN
@@ -45,15 +46,30 @@ feature -- Attributes
 	buttons: ARRAY[BUTTON]
 
 feature
-	move
+	move(target: FlOOR)
+	local i: INTEGER
 		do
-			-- from
-			-- 		i :=
-			-- until
+			if target.id - current_floor.id>0 then
+				from
+					i := 0
+				until
+					i > target.id - current_floor.id
+					-- will be more than zero
+				loop
+				 	move_one (target.id - current_floor.id)
+				end
+			else
+				from
+					i := 0
+				until
+					i > current_floor.id - target.id
+					-- will be more than zero
+				loop
+				 	move_one (target.id - current_floor.id)
+				end
+			end
 
-			-- loop
-			-- 	target_floor != current_floor
-			-- end
+
 		end
 
 	move_one(delta: INTEGER)
@@ -67,14 +83,26 @@ feature
 		end
 
 	open_doors
+		require
+			not_moving: is_moving = false
+			is_closed: is_doors_open = false
+			modify_model ("is_doors_open", Current)
 		do
-
+			is_doors_open := true
+		ensure
+			opened: is_doors_open = true
 		end
 
 	close_doors
+		require
+			not_moving: is_moving = false
+			is_closed: is_doors_open = true
+			modify_model ("is_doors_open", Current)
 		do
-
-		end
+			is_doors_open := false
+		ensure
+			opened: is_doors_open = false
+	    end
 
 	get_position: INTEGER
 		do
