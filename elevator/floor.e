@@ -14,6 +14,6 @@ feature {NONE} -- Attributes
 
 	button_up: BUTTON
 
-	button_	down: BUTTON
+	button_down: BUTTON
 
 end

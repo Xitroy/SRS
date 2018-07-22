@@ -12,18 +12,18 @@ feature -- Attributes
 	current_floor: FLOOR
 			-- 	current floor of a cabin.
 
+	target_floor: FLOOR
+
 	is_moving: BOOLEAN
 			-- 	state of a cabin.
 
 	is_open: BOOLEAN
 			-- 	state of a doors.
 
-	target_floor: FLOOR
-
 	buttons: ARRAY[BUTTON]
 
 feature
-	move()
+	move
 		do
 			-- from
 			-- 		i :=
@@ -50,13 +50,13 @@ feature
 
 		end
 
-	get_position()
+	get_position
 		do
-			Result: current_floor.id
+			Result := current_floor.id
 		end
 
-	get_state()
+	get_state
 		do
-			Result: is_moving
+			Result:= is_moving
 		end
 end
