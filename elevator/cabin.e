@@ -68,8 +68,6 @@ feature
 				 	move_one (target.id - current_floor.id)
 				end
 			end
-
-
 		end
 
 	move_one(delta: INTEGER)
