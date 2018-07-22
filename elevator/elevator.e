@@ -23,7 +23,7 @@ class
 				create f5
 				create f6
 				floors := << f1, f2, f3, f4, f5, f6 >>
-				create c1.make (f1)
+				create c1.make (f1, Current)
 				cabins := << c1 >>
 			end
 
