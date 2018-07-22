@@ -43,6 +43,9 @@ feature -- Attributes
 
 feature
 	move(target: FlOOR)
+		require
+			target_not_void: target /= VOID
+			cur_floor_not_void: current_floor /= VOID
 		local
 			i: INTEGER
 		do
